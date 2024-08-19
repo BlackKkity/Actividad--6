@@ -1,0 +1,14 @@
+
+server {
+    listen 80;
+    server_name 192.168.1.132;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/ruta/a/tu/proyecto/app.sock;
+    }
+
+    location /static/ {
+        alias /ruta/a/tu/proyectog6/static/;
+    }
+}
