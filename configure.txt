@@ -1,0 +1,39 @@
+
+#porque hay que instalar la base de datos redis#
+creas el entorno virtual  con: virtualenv venv
+luego activas el entorno virtual con:       .\venv\Scripts\activate 
+
+
+y luego instalas el : pip install flask flask-wtf redis
+
+luego colocas el app.py para correrlo de forma local
+
+
+Configuración del Servidor
+Primero, asegúrate de que tu servidor esté actualizado:
+
+sudo apt update
+sudo apt upgrade
+
+sudo apt install python3 python3-pip python3-venv nginx
+cd /ruta/a/tu/proyecto
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+pip install gunicorn
+   gunicorn --bind 0.0.0.0:8000 app:app "
+
+
+Configuración de Gunicorn como un Servicio del Sistema
+Crea un archivo de servicio para Gunicorn:
+sudo nano /etc/systemd/system/gunicorn.service
+
+
+configuracionde dominio ssl
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d tu_dominio
+
+
+configuracion del firewall
+sudo ufw allow 'Nginx Full'
